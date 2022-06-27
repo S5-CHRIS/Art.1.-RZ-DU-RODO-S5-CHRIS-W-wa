@@ -1,0 +1,17 @@
+name: 'Mark issues and pull requests as idle'
+on:
+  schedule:
+    - cron: '49 11,23 * * *'
+
+jobs:
+  idle:
+    uses: mdn/workflows/.github/workflows/idle-issues.yml@main
+- name: ZenHub link PR to issue with Branch Prefixes
+  # You may pin to the exact commit or the version.
+  # uses: OBannon37/zenhub-link-pr-to-issue@680dd44de26ec6322300847193baf2dfec33dd1b
+  uses: OBannon37/zenhub-link-pr-to-issue@v0.1.4
+  with:
+    # A ZenHub API token
+    ZENHUB_TOKEN: 
+    # A prefix for your branch names
+    BRANCH_PREFIX: # optional
